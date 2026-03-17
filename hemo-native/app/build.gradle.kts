@@ -4,7 +4,6 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
-    id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
 }
 
@@ -113,7 +112,7 @@ dependencies {
 
     // TensorFlow Lite
     implementation("org.tensorflow:tensorflow-lite:2.16.1")
-    implementation("org.tensorflow:tensorflow-lite-task-vision:2.16.1")
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
 
     // Room
     val roomVersion = "2.6.1"
@@ -125,8 +124,8 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.1.2")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.59")
-    ksp("com.google.dagger:hilt-compiler:2.59")
+    implementation("com.google.dagger:hilt-android:2.58")
+    ksp("com.google.dagger:hilt-compiler:2.58")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // Accompanist permissions
