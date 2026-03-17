@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "662369049235",
+    "project_id": "hemoedge",
+    "storage_bucket": "hemoedge.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662369049235:android:1a0341255c1ee1fca48b66",
+        "android_client_info": {
+          "package_name": "com.Siddhesh.hemoedge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkiQrOrEBtZaBRLDc7Ndwro_3ryr3M2f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

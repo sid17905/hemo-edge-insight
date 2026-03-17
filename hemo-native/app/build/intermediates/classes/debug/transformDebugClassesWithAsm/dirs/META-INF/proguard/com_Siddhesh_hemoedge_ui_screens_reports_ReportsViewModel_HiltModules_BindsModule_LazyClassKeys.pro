@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.Siddhesh.hemoedge.ui.screens.reports.ReportsViewModel

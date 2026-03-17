@@ -3,7 +3,9 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.kotlin.plugin.compose")
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
 }
 
@@ -64,11 +66,6 @@ android {
         buildConfig = true
     }
 
-    // Kotlin 1.9.x Compose compiler configuration
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.15"
-    }
-
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -109,13 +106,14 @@ dependencies {
     implementation("androidx.camera:camera-camera2:$cameraXVersion")
     implementation("androidx.camera:camera-lifecycle:$cameraXVersion")
     implementation("androidx.camera:camera-view:$cameraXVersion")
+    implementation("com.google.guava:guava:33.2.1-android")
 
     // TensorFlow Lite
     implementation("org.tensorflow:tensorflow-lite:2.16.1")
     implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
 
     // Room
-    val roomVersion = "2.6.1"
+    val roomVersion = "2.8.4"
     implementation("androidx.room:room-runtime:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
