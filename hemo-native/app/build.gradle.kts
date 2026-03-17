@@ -3,7 +3,7 @@ import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
     id("com.google.gms.google-services")
 }
@@ -25,7 +25,7 @@ android {
             useSupportLibrary = true
         }
 
-        val props = gradleLocalProperties(rootDir)
+        val props = gradleLocalProperties(rootDir, providers)
         buildConfigField(
             "String",
             "LLM_BASE_URL",
@@ -65,6 +65,7 @@ android {
         buildConfig = true
     }
 
+    // Kotlin 1.9.x Compose compiler configuration
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.15"
     }
@@ -117,15 +118,15 @@ dependencies {
     // Room
     val roomVersion = "2.6.1"
     implementation("androidx.room:room-runtime:$roomVersion")
-    kapt("androidx.room:room-compiler:$roomVersion")
+    ksp("androidx.room:room-compiler:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
 
     // DataStore
     implementation("androidx.datastore:datastore-preferences:1.1.2")
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.55")
-    kapt("com.google.dagger:hilt-android-compiler:2.55")
+    implementation("com.google.dagger:hilt-android:2.59")
+    ksp("com.google.dagger:hilt-compiler:2.59")
     implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
 
     // Accompanist permissions
